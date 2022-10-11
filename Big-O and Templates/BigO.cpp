@@ -44,9 +44,48 @@ void BigOMain()
 	}
 }
 
+template <class T>
+T getLarger(T x, T y)
+{
+	return x < y ? y : x;
+}
+template <class T>
+T getSmallest(T x, T y)
+{
+	return x < y ? x : y;
+}
 
-
+template <class T>
+void print(list<T> items)
+{
+	cout << "[";
+	for (typename list<T>::iterator iter = items.begin();
+		iter != items.end(); iter++)
+	{
+		if (iter != items.begin())
+		{
+			cout << ", ";
+		}
+		cout << *iter;
+	}
+	cout << "]"<<endl;
+}
 int main()
 {
-	
+	int x = 5, y = 10;
+	cout << "Int: " << getLarger(x, y) 
+		<<"," << getSmallest(x, y) << endl;
+
+	char a = 'a', b = 'b';
+	cout <<"Char: " << getLarger(a, b)
+		<< "," << getSmallest(a, b) << endl;
+
+	double s = 8.9, t = 1.3;
+	cout << "Double: " << getLarger(s, t)
+		<< "," << getSmallest(s, t) << endl;
+
+	list<int> nums = {1,2,3,4,5};
+	list<string> strings = {"this", "is", "a", "list"};
+	print(nums);
+	print(strings);
 }
