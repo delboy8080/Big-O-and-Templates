@@ -8,6 +8,7 @@
  * \date   October 2020
  *********************************************************************/
 #include "Functions.h"
+#include "Pair.h"
 
 void BigOMain()
 {
@@ -88,4 +89,14 @@ int main()
 	list<string> strings = {"this", "is", "a", "list"};
 	print(nums);
 	print(strings);
+
+	cout << "-========================== Q4 ============================" << endl;
+	Pair<int, string> p1(1, "Derek");
+	Pair<string, char> p2("Tony Stark", 'a');
+	Pair<float, double> p3(2.5f, 6.98);
+	Pair<int, float> p4(1, 1.25);
+	Pair<char, int> p5( 'a', 65);
+
+	cout << p1<< p2 << p3 << p4 << p5 << endl;
+
 }
