@@ -9,6 +9,7 @@
  *********************************************************************/
 #include "Functions.h"
 #include "Pair.h"
+#include "DynamicArray.h"
 
 void BigOMain()
 {
@@ -71,8 +72,24 @@ void print(list<T> items)
 	}
 	cout << "]"<<endl;
 }
+
+void print(DynamicArray<int> arr)
+{
+
+	cout << "[";
+	for (int i = 0; i < arr.size();i++)
+	{
+		if (i!=0)
+		{
+			cout << ", ";
+		}
+		cout << arr.get(i);
+	}
+	cout << "]" << endl;
+}
 int main()
 {
+	/*
 	int x = 5, y = 10;
 	cout << "Int: " << getLarger(x, y) 
 		<<"," << getSmallest(x, y) << endl;
@@ -98,5 +115,14 @@ int main()
 	Pair<char, int> p5( 'a', 65);
 
 	cout << p1<< p2 << p3 << p4 << p5 << endl;
+	cout << "-========================== Q5 ============================" << endl;
+	*/
+	DynamicArray<int> arr(-1, 5);
+	for (int i = 2; i <= 20; i += 2)
+	{
+		arr.add(i);
+	}
+	print(arr);
+
 
 }
